@@ -1,0 +1,38 @@
+﻿@page
+@using WebAPI.Pages
+@model ShowRestaurantsModel
+@{
+ Layout = "_Layout";
+ ViewData["Title"] = "Restaurants";
+}
+@section Styles{
+<link rel="stylesheet" href="Styles/Style.css">
+}
+<table class="show-restaurants-table">
+ <tr>
+  <th>ID</th>
+  <th>Name</th>
+  <th>Number Of Rows</th>
+  <th>Number Of Columns</th>
+  <th>Tables</th>
+  <th>Products</th>
+  <th>Edit</th>
+  <th>Delete</th>
+  <th>Show Restaurant</th>
+ </tr>
+ @foreach (var restaurant in Model.Restaurants)
+ {
+  <tr>
+   <td>@restaurant.ID</td>
+   <td>@restaurant.Name</td>
+   <td>@restaurant.NumberOfRows</td>
+   <td>@restaurant.NumberOfColumns</td>
+   <td><a href="ShowTables?id=@restaurant.ID">Tables</a></td>
+   <td><a href="AddProducts?id=@restaurant.ID">Products</a></td>
+   <td><a href="EditRestaurant?id=@restaurant.ID">Edit</a>
+   </td>
+   <td><a href="DeleteRestaurant?id=@restaurant.ID">Delete</a></td>
+   <td><a href="http://127.0.0.1:5500/index.html">Show Restaurant</a></td>
+  </tr>
+ }
+</table>

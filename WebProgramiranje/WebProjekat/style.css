@@ -1,0 +1,189 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+main {
+  display: flex;
+  width: 100vw;
+  height: 90vh;
+  background-image: url(./main-background.jpg);
+  background-size: contain;
+  justify-content: center;
+  flex-direction: row-reverse;
+}
+.project-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.table-container {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgb(231, 225, 225);
+  color: orangered;
+  width: 100%;
+  align-items: center;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+}
+.table-container:hover {
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+nav {
+  height: 10vh;
+  width: 100vw;
+  background-color: black;
+  color: orangered;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 3px 3px 3px black;
+  z-index: 5;
+}
+.logo {
+  font-size: 1.3rem;
+  margin-left: 2.5rem;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.row {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+}
+.main-window {
+  width: 80vw;
+  height: 70vh;
+  margin-top: 10vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* Style forme */
+.table-ID {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  color: rgb(231, 225, 225);
+  text-align: center;
+  text-decoration: underline orangered;
+}
+.product-list {
+  height: calc(55vh - 0.3rem);
+  margin-top: 0.3rem;
+  color: rgb(231, 225, 225);
+  background: transparent;
+  overflow: auto;
+}
+.product-sum {
+  display: flex;
+  height: 5vh;
+  background: transparent;
+  color: rgb(231, 225, 225);
+  justify-content: center;
+  align-items: center;
+}
+.form-btn {
+  width: 100%;
+  height: 7vh;
+  cursor: pointer;
+  background: transparent;
+  color: rgb(231, 225, 225);
+  border: 2px solid orangered;
+}
+.check-out {
+  margin-top: auto;
+}
+.add-product {
+  margin-top: 1rem;
+}
+.select-label {
+  margin: 1rem 0;
+  margin-left: 0.2rem;
+  font-size: 1.2rem;
+  color: rgb(231, 225, 225);
+}
+/* Da bi se sredio select padajuci meni trebao bih
+sve da umotam u divove i onda njima da uradim style, pa sam se odlucio da ga ostavim ovako, jer nisam znao na vreme sta me ceka :D */
+.select-product {
+  height: 5vh;
+  padding: 0.5rem;
+  color: rgb(231, 225, 225);
+  background: transparent;
+  border: 2px solid orangered;
+  cursor: pointer;
+}
+.select-product > option {
+  background-color: #030303;
+}
+
+/* Klase koje koristim za pojavu/brisanje forme sa ekrana */
+.main-form {
+  justify-content: space-between;
+}
+.main-window-form {
+  margin-right: 5vw;
+  width: 75vw;
+}
+.display-none {
+  display: none;
+}
+.table-form-activated {
+  height: 100%;
+  width: 15vw;
+  background-color: #030303;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+/* Style poruke */
+.message-box {
+  display: none;
+  width: 40vw;
+  height: 15vh;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-31%, -50%);
+  z-index: 1000;
+  text-align: center;
+  font-size: 2rem;
+  color: rgb(231, 225, 225);
+  line-height: 15vh;
+  border: 1px solid orangered;
+  -webkit-animation: fadeOut 2s;
+  animation: fadeOut 2s;
+  animation-delay: 0.4s;
+}
+/* Ovo je neka prosta animacija, koja ima svojih problema, ako se aktivira vise puta pre nego sto se prethodna zavrsi, onda ne reaguje kako bi trebalo */
+/* Animacija za poruku */
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.test {
+  background-color: green;
+  width: 20vw;
+  height: 20vh;
+  position: fixed;
+  z-index: 100000;
+  padding: 20px;
+}

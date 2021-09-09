@@ -1,0 +1,5 @@
+Ideja je bila da se kreira web aplikacija za restorane. U njoj se mogu kreirati restorani, uneti njihov broj stolova i proizvode koje bi sluzili.
+Svaki sto moze sadrzati neku kolicinu tih proizvoda i na osnovu toga se moze izracunati racun stola. Tako postoji dugme za dodavanje proizvoda na sto,
+za izdavanje racuna (brisanje svih proizvoda sa stola). Sa druge strane, kreirano razor tehnologijom je napravljen mini menadzer koji ima mogucnosti
+dodavanje, brisanja, izmene ovih entiteta u zavisnosti od toga koji je u pitanju. Takodje sam imao ideju da prilikom klika na 'Show Restaurant' dugme
+bude prikazan konkretni restoran, sto nisam uspeo da resim. Upotreba aplikacije je ocigledna.

@@ -1,0 +1,139 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.background {
+  /* background: url('../../Pictures/1.jpg'); */
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100vh;
+}
+.project-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+nav {
+  height: 10vh;
+  width: 100vw;
+  background-color: black;
+  color: orangered;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 3px 3px 3px black;
+  z-index: 5;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+.show-restaurants {
+  color: orangered;
+  font-size: 1.3rem;
+  margin-left: 2.5rem;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 2px solid orangered;
+  padding: 1rem;
+}
+.create-restaurant {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  height: 70vh;
+
+  background: black;
+  font-size: 1.5rem;
+  color: white;
+  margin-top: 10vh;
+  /* display: none; */
+}
+.create-restaurant h2 {
+  margin-top: 5vh;
+  margin-left: 2vw;
+  margin-bottom: 8vh;
+}
+.create-restaurant form div {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 3vw;
+  margin-top: 2vh;
+  margin-right: 2vw;
+}
+.create-restaurant button {
+  float: right;
+  margin-right: 2vh;
+  margin-top: 5vh;
+  padding: 1rem;
+  color: white;
+  background: transparent;
+  border: 2px solid orangered;
+  cursor: pointer;
+}
+.show-restaurants-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  text-align: center;
+  border: 1px solid black;
+}
+.show-restaurants-table th {
+  background-color: black;
+  color: orangered;
+  height: 6vh;
+  margin: auto;
+}
+.show-restaurants-table td {
+  height: 4vh;
+  color: black;
+}
+.show-restaurants-table tr:nth-of-type(odd) {
+  background-color: #d3d3d3;
+}
+.restaurant-details-nav {
+  background-color: black;
+  color: orangered;
+  font-size: 1.2rem;
+  display: flex;
+  border-bottom: 1px solid orangered;
+  height: 5vh;
+  align-items: center;
+}
+.restaurant-id {
+  margin-left: 1rem;
+}
+.restaurant-name {
+  margin-left: 4rem;
+}
+.restaurants-btn {
+  margin-left: auto;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+.add-product {
+  display: flex;
+  height: 5vh;
+  align-items: center;
+  color: orangered;
+  background-color: black;
+  border-bottom: 1px solid orangered;
+  font-size: 1.2rem;
+}
+.add-product div {
+  margin-left: 1rem;
+}
+.add-product button {
+  margin-left: auto;
+  margin-right: 4rem;
+  color: orangered;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  font-weight: bold;
+  font-size: 1rem;
+}

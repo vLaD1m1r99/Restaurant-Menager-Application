@@ -1,0 +1,40 @@
+﻿@page
+@model WebAPI.Pages.ShowTablesModel
+@{
+  Layout = "_Layout";
+  ViewData["Title"] = "Tables";
+}
+@section Styles{
+<link rel="stylesheet" href="Styles/Style.css">
+}
+@{
+  var restaurant = Model.Restaurant;
+}
+<div class="restaurant-details-nav">
+  <div class="restaurant-id">Restaurant ID: @restaurant.ID</div>
+  <div class="restaurant-name">Restaurant Name: @restaurant.Name</div>
+  <div class="restaurants-btn"><a href="./ShowRestaurants">Show Restaurants</a> </div>
+</div>
+
+<table class="show-restaurants-table">
+  <tr>
+    <th>Table ID</th>
+    <th>Product Name</th>
+    <th>Product Quantity</th>
+    <th>Quantity--</th>
+    <th>Product Price</th>
+    <th>Table Sum</th>
+  </tr>
+  @foreach (var table in Model.Tables)
+  {
+    var sum = table.Quantities * table.Product.Price;
+    <tr>
+      <td>@table.Table.ID</td>
+      <td>@table.Product.Name</td>
+      <td>@table.Quantities</td>
+      <td><a href="RemoveQuantity?id=@table.Table.ID&name=@table.Product.Name">Quantity--</a></td>
+      <td>@table.Product.Price</td>
+      <td>@sum</td>
+    </tr>
+  }
+</table>

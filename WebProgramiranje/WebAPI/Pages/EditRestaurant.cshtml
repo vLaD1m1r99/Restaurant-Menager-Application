@@ -1,0 +1,42 @@
+﻿@page
+@model WebAPI.Pages.EditRestaurantModel
+@{
+  Layout = "_Layout";
+  ViewData["Title"] = "Edit Restaurant";
+}
+@section Styles{
+<link rel="stylesheet" href="Styles/Style.css">
+}
+@{
+  var restaurant = Model.Restaurant;
+}
+<div class="background">
+  <div class="project-container">
+    <nav>
+      <a href="ShowRestaurants" class="show-restaurants">Show Restaurants</a>
+    </nav>
+
+    <div class="create-restaurant">
+      <h2>Edit Restaurant @restaurant.ID</h2>
+
+      <form method="POST" class="form-inputs">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="Restaurant.ID" value="@restaurant.ID">
+        <div> <label for="">New restaurant name: </label>
+          <input type="text" name="Restaurant.Name">
+
+        </div>
+        <div> <label for="">Number of rows: </label>
+          <input type="number" name="Restaurant.NumberOfRows">
+        </div>
+        <div><label for="">Number of columns:</label>
+          <input type="number" name="Restaurant.NumberOfColumns">
+        </div>
+
+        <button type="submit" id="restaurant-submit">Edit
+          Restaurant </button>
+
+      </form>
+    </div>
+  </div>
+</div>

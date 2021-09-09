@@ -1,0 +1,47 @@
+﻿@page
+@using WebAPI.Pages
+@model AddProductsModel
+@{
+ Layout = "_Layout";
+ ViewData["Title"] = "Tables";
+}
+@section Styles{
+<link rel="stylesheet" href="Styles/Style.css">
+}
+@{
+ var restaurant = Model.Restaurant;
+}
+<div class="restaurant-details-nav">
+ <div class="restaurant-id">Restaurant ID: @restaurant.ID</div>
+ <div class="restaurant-name">Restaurant Name: @restaurant.Name</div>
+ <div class="restaurants-btn"><a href="./ShowRestaurants">Show Restaurants</a> </div>
+</div>
+<form class="add-product" method="POST">
+ @Html.AntiForgeryToken()
+ <input type="hidden" name="RestaurantID" value="@restaurant.ID">
+ <div>
+  <label for="">Product Name: </label>
+  <input type="text" name="Product.Name">
+ </div>
+ <div>
+  <label for="">Product Price: </label>
+  <input type="number" name="Product.Price">
+ </div>
+ <button type="submit">Add Product</button>
+</form>
+
+<table class="show-restaurants-table">
+ <tr>
+  <th>Product Name</th>
+  <th>Product Price</th>
+  <th>Delete Product</th>
+ </tr>
+ @foreach (var product in Model.Products)
+ {
+  <tr>
+   <td>@product.Name</td>
+   <td>@product.Price</td>
+   <td><a href="DeleteProduct?ID=@restaurant.ID&Name=@product.Name">Delete Product</a></td>
+  </tr>
+ }
+</table>

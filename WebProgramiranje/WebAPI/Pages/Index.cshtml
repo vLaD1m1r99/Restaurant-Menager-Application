@@ -1,0 +1,40 @@
+﻿@page
+@using WebAPI.Pages
+@model IndexModel
+@{
+ Layout = "_Layout";
+ ViewData["Title"] = "Index";
+
+}
+@section Styles{
+<link rel="stylesheet" href="Styles/Style.css">
+}
+
+<div class="background">
+ <div class="project-container">
+  <nav>
+   <a href="ShowRestaurants" class="show-restaurants">Show Restaurants</a>
+  </nav>
+
+  <div class="create-restaurant">
+   <h2>Create Restaurant</h2>
+
+   <form method="POST" class="form-inputs">
+    @Html.AntiForgeryToken()
+    <div> <label for="">Restaurant name: </label>
+     <input type="text" name="Restaurant.Name">
+
+    </div>
+    <div> <label for="">Number of rows: </label>
+     <input type="number" name="Restaurant.NumberOfRows">
+    </div>
+    <div><label for="">Number of columns:</label>
+     <input type="number" name="Restaurant.NumberOfColumns">
+    </div>
+
+
+    <button type="submit" id="restaurant-submit">Create Restaurant</button>
+   </form>
+  </div>
+ </div>
+</div>
