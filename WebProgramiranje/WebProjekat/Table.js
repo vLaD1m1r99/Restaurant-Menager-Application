@@ -6,11 +6,11 @@ export class Table {
     this.listOfProducts = [];
     this.listOfQuantities = [];
   }
-  DrawTable(host) {
+  DrawTable(host, id) {
     if (!host) throw new Exception("Parent element doesn't exists");
     this.container = document.createElement('button');
     this.container.classList.add('table-container');
-    this.container.innerHTML = `Table ${this.id}`;
+    this.container.innerHTML = `Table ${id}`;
     host.appendChild(this.container);
     //Kreiram promenu kada se klikne na sto
     var clickTable = new CustomEvent('clickTable', {

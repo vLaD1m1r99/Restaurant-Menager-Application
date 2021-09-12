@@ -72,7 +72,9 @@ export class Restaurant {
                 );
                 t.listOfQuantities.push(quantity1);
                 if (quantity.quantities != 0) {
-                  t.container.style.backgroundColor = 'black';
+                  t.container.style.backgroundColor = 'orangered';
+                  t.container.style.opacity = '0.85';
+                  t.container.style.color = 'black';
                 }
               });
             });
@@ -83,7 +85,10 @@ export class Restaurant {
           const row = document.createElement('div');
           row.classList.add('row');
           for (let j = 0; j < this.n; j++) {
-            this.tables[i * (this.n - 1) + i + j].DrawTable(row);
+            this.tables[i * (this.n - 1) + i + j].DrawTable(
+              row,
+              i + j + i * (this.n - 1)
+            );
           }
           host.appendChild(row);
         }
@@ -153,8 +158,9 @@ export class Restaurant {
       .quantity++;
     //Sto nije prazan
     this.tables.find((e) => e.id == id).container.style.backgroundColor =
-      'black';
-
+      'orangered';
+    this.tables.find((e) => e.id == id).container.style.opacity = '0.85';
+    this.tables.find((e) => e.id == id).container.style.color = 'black';
     // Dodajemo poruku
     this.tables.find((e) => e.id == id).listOfProducts.push();
     message.innerHTML = 'Product Added';
@@ -184,7 +190,10 @@ export class Restaurant {
     const productSum = document.querySelector('.product-sum');
     productSum.innerHTML = ``;
     //Sto je prazan
+    this.tables.find((e) => e.id == id).container.style.backgroundColor =
+      'black';
     this.tables.find((e) => e.id == id).container.style.opacity = '0.8';
+    this.tables.find((e) => e.id == id).container.style.color = 'orangered';
     // Dodajemo poruku
     const message = document.querySelector('.message-box');
     message.innerHTML = 'Checked Out';
@@ -201,7 +210,9 @@ export class Restaurant {
     form.classList.toggle('table-form-activated');
     main.classList.toggle('main-form');
     window.classList.toggle('main-window-form');
-    form.firstChild.innerHTML = `Table ${id}`;
+    form.firstChild.innerHTML = `Table ${this.tables.indexOf(
+      this.tables.find((e) => e.id == id)
+    )}`;
     // Ovde prikazujemo sta je na stolu
     this.ShowTable(id);
     //Kreiram promenu kada se klikne na AddProduct
